@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Your Code</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:linear-gradient(135deg,#ffffff,#f5f5f5);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.container{
+background:#fff;
+width:100%;
+max-width:430px;
+padding:40px 30px;
+border-radius:22px;
+box-shadow:0 15px 45px rgba(0,0,0,.08);
+text-align:center;
+animation:fade .6s ease;
+}
+
+.logo{
+width:90px;
+margin:auto;
+margin-bottom:25px;
+animation:float 3s ease-in-out infinite;
+}
+
+h1{
+font-size:30px;
+color:#111;
+margin-bottom:15px;
+}
+
+p{
+font-size:16px;
+color:#666;
+line-height:1.7;
+margin-bottom:28px;
+}
+
+button{
+width:100%;
+padding:16px;
+background:#000;
+color:#fff;
+border:none;
+border-radius:14px;
+font-size:17px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:translateY(-2px);
+}
+
+.code-box{
+display:none;
+margin-top:25px;
+padding:16px;
+background:#f4f4f4;
+border-radius:14px;
+font-size:18px;
+font-weight:700;
+letter-spacing:1px;
+cursor:pointer;
+transition:.3s;
+user-select:none;
+}
+
+.code-box:hover{
+background:#ececec;
+}
+
+.status{
+display:none;
+margin-top:15px;
+font-size:15px;
+font-weight:600;
+color:#16a34a;
+}
+
+.footer{
+margin-top:28px;
+font-size:13px;
+color:#999;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+}
+
+@media(max-width:600px){
+
+.container{
+padding:35px 24px;
+}
+
+h1{
+font-size:26px;
+}
+
+p{
+font-size:15px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+<circle cx="24" cy="24" r="24" fill="#000"/>
+<text x="24" y="30"
+text-anchor="middle"
+font-family="Arial"
+font-size="16"
+font-weight="700"
+fill="#fff">
+CO
+</text>
+</svg>
+
+</div>
+
+<h1>Thank You for Your Support ❤️</h1>
+
+<p>
+We truly appreciate your support. As a small token of our gratitude, your code is ready below.
+</p>
+
+<button onclick="showCode()">
+Get My Code
+</button>
+
+<div id="codeBox" class="code-box" onclick="copyCode()">
+CAIO-2026-ABC123
+</div>
+
+<div id="status" class="status">
+✅ Code copied successfully!
+</div>
+
+<div class="footer">
+Tap the code to copy it.
+</div>
+
+</div>
+
+<script>
+
+/* ===========================
+   CHANGE ONLY THIS LINE
+=========================== */
+
+const CODE = "CAIO-2026-ABC123";
+
+/* =========================== */
+
+const codeBox = document.getElementById("codeBox");
+codeBox.innerText = CODE;
+
+function showCode(){
+codeBox.style.display = "block";
+}
+
+function copyCode(){
+
+navigator.clipboard.writeText(CODE);
+
+const status = document.getElementById("status");
+
+status.style.display = "block";
+
+setTimeout(function(){
+status.style.display = "none";
+},2000);
+
+}
+
+</script>
+
+</body>
+</html>
